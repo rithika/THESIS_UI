@@ -44,11 +44,11 @@ function map4() {
   svg.style("stroke-width", 1 / s).attr("transform", "translate(" + t + ")scale(" + s + ")");
 }
 
-  d3.json('http://localhost:8000/UI/thesis/Apachecloudstack/data/mls-timezone.json', function(data){
+  d3.json('thesis/Apachecloudstack/data/mls-timezone.json', function(data){
    var com = data.commits;
    d.push(com);
 
-  d3.json("http://localhost:8000/UI/thesis/Apachecloudstack/data/timezones-topo2.json", function(json){
+  d3.json("thesis/Apachecloudstack/data/timezones-topo2.json", function(json){
 
  var tzdata = topojson.feature(json, json.objects.timezones).features;
    console.log(tzdata);

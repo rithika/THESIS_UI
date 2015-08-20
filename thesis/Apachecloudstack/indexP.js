@@ -40,7 +40,7 @@ var svg = d3.select("#percent").append("svg")
 
 svg.call(tip);
 
-d3.csv("http://localhost:8000/UI/thesis/Apachecloudstack/data/newdata.csv", function(error, data) {
+d3.csv("thesis/Apachecloudstack/data/newdata.csv", function(error, data) {
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Year"; }));
 
   data.forEach(function(d) {
