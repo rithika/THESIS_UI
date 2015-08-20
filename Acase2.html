@@ -38,14 +38,45 @@
     <script type="text/javascript"
     	src="thesis/Apachecloudstack/PopulationDiv_git.js">
     </script>
+    <script type="text/javascript"
+      src="thesis/Eclipse/AuthorData_git.js">
+  </script>
+  <script type="text/javascript"
+      src="thesis/Eclipse/AuthorDta_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Eclipse/CommitData_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Eclipse/MessagesData_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Eclipse/CommitsperAuthor_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Eclipse/MessagesperAuthor_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Eclipse/PopulationDiv_git.js">
+    </script>
 <script>
 $(document).ready(function(){   
 map1(); map2(); map3(); map4(); map5(); map6(); map7();
+mape1(); mape2(); mape3(); mape4(); mape5(); mape6(); mape7();
+//mapo1(); mapo2(); mapo3(); mapo4(); mapo5(); mapo6(); mapo7();
 });
 </script>
     <style>
 
 #aml, #agit, #cgit, #mml, #cpa, #mpa, #ctp path {
+  fill: none;
+  stroke: #111;
+}
+#aml1, #agit1, #cgit1, #mml1, #cpa1, #mpa1, #ctp1 path {
+  fill: none;
+  stroke: #111;
+}
+#aml2, #agit2, #cgit2, #mml2, #cpa2, #mpa2, #ctp2 path {
   fill: none;
   stroke: #111;
 }
@@ -83,40 +114,101 @@ map1(); map2(); map3(); map4(); map5(); map6(); map7();
         <li><a  href="#mpa">Messages per Author data</a></li>
         <li><a  href="#ctp">Commits by Timezone Population data</a></li>
       </ul>
-
       <div id="agit">
       	<h3> Shaded as per Authors per TimeZone - Apache Cloudstack; Github data </h3>
       </div>
-
       <div id="aml">
       	<h3> Shaded as per Authors per TimeZone - Apache CloudStack; Mailing list data </h3>
       </div>
-
       <div id="cgit">
       	 <h3> Shaded as per Commits per TimeZone - Apache CloudStack; Github data </h3>
       </div>
-
       <div id="mml">
       	  <h3> Shaded as per Commits per TimeZone - Apache CloudStack; Mailing list data </h3>
       </div>
-
       <div id="cpa">
       	<h3> Contributions/Authors per TimeZone - Apache CloudStack; Github data </h3>
       </div>
-
       <div id="mpa">
       	<h3> Messages/Authors per TimeZone - Apache CloudStack; Mailing list data </h3>
       </div>
-
       <div id="ctp">
       	<h3>Commits/Population per TimeZone - Apache Cloudstack; Github data </h3>
       </div>
+  </div></div>
 
+<!-- Eclipse -->
+  <div class="tab-pane row" id="eclipse"> 
+    <div id="tabs">
+ 
+        <ul>
+        <li><a  href="#agit1">Author data github</a></li>
+        <li><a  href="#aml1">Author Data Mailing lists</a></li>
+        <li><a  href="#cgit1">Commit data github</a></li>
+        <li><a  href="#mml1">Messages data mailing list</a></li>
+        <li><a  href="#cpa1">Commits per Author data</a></li>
+        <li><a  href="#mpa1">Messages per Author data</a></li>
+        <li><a  href="#ctp1">Commits by Timezone Population data</a></li>
+      </ul>
+      <div id="agit1">
+        <h3> Shaded as per Authors per TimeZone - Eclipse; Github data </h3>
+      </div>
+      <div id="aml1">
+        <h3> Shaded as per Authors per TimeZone - Eclipse; Mailing list data </h3>
+      </div>
+      <div id="cgit1">
+         <h3> Shaded as per Commits per TimeZone - Eclipse; Github data </h3>
+      </div>
+      <div id="mml1">
+          <h3> Shaded as per Commits per TimeZone - Eclipse; Mailing list data </h3>
+      </div>
+      <div id="cpa1">
+        <h3> Contributions/Authors per TimeZone - Eclipse; Github data </h3>
+      </div>
+      <div id="mpa1">
+        <h3> Messages/Authors per TimeZone - Eclipse; Mailing list data </h3>
+      </div>
+      <div id="ctp1">
+        <h3>Commits/Population per TimeZone - Eclipse; Github data </h3>
+      </div>
+  </div>
   </div>
 
-    </div>
-
-  <div class="tab-pane row" id="eclipse"> coming soon
+  <!-- OpenStack -->
+  <div class="tab-pane row" id="openstack"> 
+    <div id="tabs">
+ 
+        <ul>
+        <li><a  href="#agit2">Author data github</a></li>
+        <li><a  href="#aml2">Author Data Mailing lists</a></li>
+        <li><a  href="#cgit2">Commit data github</a></li>
+        <li><a  href="#mml2">Messages data mailing list</a></li>
+        <li><a  href="#cpa2">Commits per Author data</a></li>
+        <li><a  href="#mpa2">Messages per Author data</a></li>
+        <li><a  href="#ctp2">Commits by Timezone Population data</a></li>
+      </ul>
+      <div id="agit2">
+        <h3> Shaded as per Authors per TimeZone - OpenStack; Github data </h3>
+      </div>
+      <div id="aml2">
+        <h3> Shaded as per Authors per TimeZone - OpenStack; Mailing list data </h3>
+      </div>
+      <div id="cgit2">
+         <h3> Shaded as per Commits per TimeZone - OpenStack; Github data </h3>
+      </div>
+      <div id="mml2">
+          <h3> Shaded as per Commits per TimeZone - OpenStack; Mailing list data </h3>
+      </div>
+      <div id="cpa2">
+        <h3> Contributions/Authors per TimeZone - OpenStack; Github data </h3>
+      </div>
+      <div id="mpa2">
+        <h3> Messages/Authors per TimeZone - OpenStack; Mailing list data </h3>
+      </div>
+      <div id="ctp2">
+        <h3>Commits/Population per TimeZone - OpenStack; Github data </h3>
+      </div>
+  </div>
   </div>
 </div>
 </div>
