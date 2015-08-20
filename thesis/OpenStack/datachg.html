@@ -1,0 +1,101 @@
+<html>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right+100)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.json("Openstack/scm-demographics-birth.json", function(data){
+	var one,none = 0;
+	var arr1 =[];
+	var comp =[];
+	var age = data.persons.age;
+	var id = data.persons.id;
+	var name = data.persons.name;
+	for(var j = 0;j < age.length;j++){
+		var date = new Date(data.date);
+			one = age[j];
+			none = one.substr(0, one.indexOf(' '));	
+		var nd = new Date(date.setDate(date.getDate() - none));
+		var year = nd.getFullYear();
+			arr1.push(year);
+	}
+// arr1 accessible here; it has all the start years for the contributors from start
+//console.log(arr1);
+var copy = arr1.slice(0);
+for (var i = 0; i < arr1.length; i++) {
+ 
+		var myCount = 0;	
+		// loop over every element in the copy and see if it's the same
+		for (var w = 0; w < copy.length; w++) {
+			if (arr1[i] == copy[w]) {
+				// increase amount of times duplicate is found
+				myCount++;
+				// sets item to undefined
+				delete copy[w];
+			}
+		}
+ 
+		if (myCount > 0) {
+			var a = new Object();
+			a.value = arr1[i];
+			a.count = myCount;
+			comp.push(a);
+		}
+	}
+ 
+	//console.log(comp);
+
+});
+d3.json("Openstack/scm-demographics-aging.json", function(data){
+	var one1,none1 = 0;
+	var arr2 =[];
+	var comp1 =[];
+	var age1 = data.persons.age;
+	var id1 = data.persons.id;
+	var name1 = data.persons.name;
+	for(var i = 0;i < age1.length;i++){
+		var date1 = new Date(data.date);
+			one1 = age1[i];
+			none1 = one1.substr(0, one1.indexOf(' '));	
+		var nd1 = new Date(date1.setDate(date1.getDate() - none1));
+		var year1 = nd1.getFullYear();
+			arr2.push(year1);
+	}
+// arr2 accessible here; it has all the start years for the contributors still left
+//console.log(arr2);
+var copy1 = arr2.slice(0);
+for (var i = 0; i < arr2.length; i++) {
+ 
+		var myCount1 = 0;	
+		// loop over every element in the copy and see if it's the same
+		for (var w = 0; w < copy1.length; w++) {
+			if (arr2[i] == copy1[w]) {
+				// increase amount of times duplicate is found
+				myCount1++;
+				// sets item to undefined
+				delete copy1[w];
+			}
+		}
+ 
+		if (myCount1 > 0) {
+			var a = new Object();
+			a.value = arr2[i];
+			a.count = myCount1;
+			comp1.push(a);
+		}
+	}
+ 
+	//console.log(comp1);
+
+});
+</script>
+</body>
+</html>

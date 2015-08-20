@@ -1,0 +1,119 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+</head>
+<style>
+#container {
+    height: 400px; 
+    min-width: 400px; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+</style>
+<script>
+        var options = {
+        chart: {
+            renderTo: 'container',
+            type: 'column'
+        },
+        title: {
+            text: 'Stacked column chart - Puppet Labs'
+        },
+         credits: {
+      enabled: false
+  },
+        xAxis: {
+            categories: []
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Strength'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        },
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.x + '</b><br/>' +
+                    this.series.name + ': ' + this.y + '<br/>' +
+                    'Total: ' + this.point.stackTotal;
+            }
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: false,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }
+        },
+        series: []
+    };
+$.get('data/newdata1.csv', function(data) {
+
+
+    // Split the lines
+    var lines = data.split('\n');
+      
+    // Iterate over the lines and add categories or series
+    $.each(lines, function(lineNo, line) {
+        var items = line.split(',');
+        
+        // header line containes categories
+        if (lineNo == 0) {
+            $.each(items, function(itemNo, item) {
+                if (itemNo > 0) options.xAxis.categories.push(item);
+            });
+        }
+        
+        // the rest of the lines contain data with their name in the first 
+        // position
+        else {
+            var series = {
+                data: []
+            };
+            $.each(items, function(itemNo, item) {
+                if (itemNo == 0) {
+                    series.name = item;
+                } else {
+                    series.data.push(parseFloat(item));
+                }
+            });
+            
+            options.series.push(series);
+    
+        }
+        
+    });
+    
+    // Create the chart
+    var chart = new Highcharts.Chart(options);
+});
+</script>
+<body>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</body>

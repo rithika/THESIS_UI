@@ -1,0 +1,124 @@
+<html>
+<head>
+<title> Viz </title>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="http://localhost:8000/UI/thesis/Apachecloudstack/textures.min.js"></script>
+<link type="text/css" rel="stylesheet" href="http://localhost:8000/UI/thesis/Apachecloudstack/colorbrewer.css"/>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+		$(function() {
+		$( "#tabs" ).tabs();
+		});
+	</script>
+	<script type="text/javascript"
+    	src="http://localhost:8000/UI/thesis/Apachecloudstack/AuthorData_git.js">
+	</script>
+	<script type="text/javascript"
+    	src="http://localhost:8000/UI/thesis/Apachecloudstack/AuthorDta_mlists.js">
+    </script>
+    <script type="text/javascript"
+    	src="http://localhost:8000/UI/thesis/Apachecloudstack/CommitData_git.js">
+    </script>
+    <script type="text/javascript"
+    	src="http://localhost:8000/UI/thesis/Apachecloudstack/MessagesData_mlists.js">
+    </script>
+    <script type="text/javascript"
+    	src="http://localhost:8000/UI/thesis/Apachecloudstack/CommitsperAuthor_git.js">
+    </script>
+    <script type="text/javascript"
+    	src="http://localhost:8000/UI/thesis/Apachecloudstack/MessagesperAuthor_mlists.js">
+    </script>
+    <script type="text/javascript"
+    	src="http://localhost:8000/UI/thesis/Apachecloudstack/PopulationDiv_git.js">
+    </script>
+<script>
+$(document).ready(function(){   
+map1(); map2(); map3(); map4(); map5(); map6(); map7();
+});
+</script>
+    <style>
+
+#aml, #agit, #cgit, #mml, #cpa, #mpa, #ctp path {
+  fill: none;
+  stroke: #111;
+}
+
+.graticule {
+  stroke: #aaa;
+}
+
+</style>
+</head>
+<body>
+<div class = "container-fluid">
+<button class="btn btn-warning"><a href="http://localhost:8000/UI/">Home</a></button>	
+<center>
+	<h2>Where do Developers work</h2></center>
+    <p> Pick an organization </p>
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#apache">Apache cloudstack</a></li>
+        <li><a data-toggle="tab" href="#eclipse">Eclipse</a></li>
+        <li><a data-toggle="tab" href="#openstack">OpenStack</a></li>
+        <li><a data-toggle="tab" href="#puppet">Puppet Labs</a></li>
+        <li><a data-toggle="tab" href="#redhat">Redhat</a></li>
+      </ul>
+<div class="tab-content">
+      <!-- Apache Cloudstack -->
+      <div class="tab-pane row active" id="apache">
+      	<div id="tabs">
+ 
+      	<ul>
+        <li><a  href="#agit">Author data github</a></li>
+        <li><a  href="#aml">Author Data Mailing lists</a></li>
+        <li><a  href="#cgit">Commit data github</a></li>
+        <li><a  href="#mml">Messages data mailing list</a></li>
+        <li><a  href="#cpa">Commits per Author data</a></li>
+        <li><a  href="#mpa">Messages per Author data</a></li>
+        <li><a  href="#ctp">Commits by Timezone Population data</a></li>
+      </ul>
+
+      <div id="agit">
+      	<h3> Shaded as per Authors per TimeZone - Apache Cloudstack; Github data </h3>
+      </div>
+
+      <div id="aml">
+      	<h3> Shaded as per Authors per TimeZone - Apache CloudStack; Mailing list data </h3>
+      </div>
+
+      <div id="cgit">
+      	 <h3> Shaded as per Commits per TimeZone - Apache CloudStack; Github data </h3>
+      </div>
+
+      <div id="mml">
+      	  <h3> Shaded as per Commits per TimeZone - Apache CloudStack; Mailing list data </h3>
+      </div>
+
+      <div id="cpa">
+      	<h3> Contributions/Authors per TimeZone - Apache CloudStack; Github data </h3>
+      </div>
+
+      <div id="mpa">
+      	<h3> Messages/Authors per TimeZone - Apache CloudStack; Mailing list data </h3>
+      </div>
+
+      <div id="ctp">
+      	<h3>Commits/Population per TimeZone - Apache Cloudstack; Github data </h3>
+      </div>
+
+  </div>
+
+    </div>
+
+  <div class="tab-pane row" id="eclipse"> coming soon
+  </div>
+</div>
+</div>
+</body>
+</html>

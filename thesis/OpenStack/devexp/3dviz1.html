@@ -1,0 +1,104 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<style>
+#container {
+    height: 400px; 
+    min-width: 400px; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+</style>
+<script>
+       var options = {
+       chart: {
+         renderTo: 'container',
+        defaultSeriesType: 'column',
+             margin: 75,
+            options3d: {
+                enabled: true,
+                alpha: 10,
+                beta: 25,
+                depth: 70
+            }
+        },
+        title: {
+            text: 'OpenStack Community DLC'
+        },
+        xAxis: {
+           categories: []
+            
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Employees'
+            }
+        }],
+        legend: {
+            shadow: false
+        },
+        credits: {
+      enabled: false
+  },
+        tooltip: {
+            shared: false
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0,
+                depth: 25
+            }
+        },
+        series: []
+    };
+        $.get('newdata.csv', function(data) {
+    // Split the lines
+    var lines = data.split('\n');
+    
+    // Iterate over the lines and add categories or series
+    $.each(lines, function(lineNo, line) {
+        var items = line.split(',');
+        
+        // header line containes categories
+        if (lineNo == 0) {
+            $.each(items, function(itemNo, item) {
+                if (itemNo > 0) options.xAxis.categories.push(item);
+            });
+        }
+        
+        // the rest of the lines contain data with their name in the first 
+        // position
+        else {
+            var series = {
+                data: []
+            };
+            $.each(items, function(itemNo, item) {
+                if (itemNo == 0) {
+                    series.name = item;
+                } else {
+                    series.data.push(parseInt(item));
+                }
+            });
+            
+            options.series.push(series);
+    
+        }
+        
+    });
+    
+    // Create the chart
+    var chart = new Highcharts.Chart(options);
+});
+</script>
+</head>
+<body>
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+</body>
+</html>
