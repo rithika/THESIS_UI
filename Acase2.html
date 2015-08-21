@@ -16,6 +16,7 @@
 		$(function() {
 		$( "#tabs" ).tabs();
     $("#tabs1").tabs();
+    $("#tabs2").tabs();
 		});
 	</script>
 	<script type="text/javascript"
@@ -60,11 +61,76 @@
     <script type="text/javascript"
       src="thesis/Eclipse/PopulationDiv_git.js">
     </script>
+    <script type="text/javascript"
+      src="thesis/OpenStack/AuthorData_git.js">
+  </script>
+  <script type="text/javascript"
+      src="thesis/OpenStack/AuthorData_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/OpenStack/CommitsData_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/OpenStack/MessagesData_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/OpenStack/CommitsperAuthor_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/OpenStack/MessagesperAuthor_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/OpenStack/PopulationDiv_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Puppetllabs/AuthorData_git.js">
+  </script>
+  <script type="text/javascript"
+      src="thesis/Puppetllabs/AuthorData_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Puppetllabs/CommitData_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Puppetllabs/MessagesData_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Puppetllabs/CommitsperAuthor_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Puppetllabs/MessagesperAuthor_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Puppetllabs/PopulationDiv_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Redhat/AuthorData_git.js">
+  </script>
+  <script type="text/javascript"
+      src="thesis/Redhat/AuthorData_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Redhat/CommitData_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Redhat/MessagesData_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Redhat/CommitsperAuthor_git.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Redhat/MessagesperAuthor_mlists.js">
+    </script>
+    <script type="text/javascript"
+      src="thesis/Redhat/PopulationDiv_git.js">
+    </script>
 <script>
 $(document).ready(function(){   
 map1(); map2(); map3(); map4(); map5(); map6(); map7();
 mape1(); mape2(); mape3(); mape4(); mape5(); mape6(); mape7();
-//mapo1(); mapo2(); mapo3(); mapo4(); mapo5(); mapo6(); mapo7();
+mapo1(); mapo2(); mapo3(); mapo4(); mapo5(); mapo6(); mapo7();
+mapp1(); mapp2(); mapp3(); mapp4(); mapp5(); mapp6(); mapp7();
+mapr1(); mapr2(); mapr3(); mapr4(); mapr5(); mapr6(); mapr7();
 });
 </script>
     <style>
@@ -81,7 +147,14 @@ mape1(); mape2(); mape3(); mape4(); mape5(); mape6(); mape7();
   fill: none;
   stroke: #111;
 }
-
+#aml3, #agit3, #cgit3, #mml3, #cpa3, #mpa3, #ctp3 path {
+  fill: none;
+  stroke: #111;
+}
+#aml4, #agit4, #cgit4, #mml4, #cpa4, #mpa4, #ctp4 path {
+  fill: none;
+  stroke: #111;
+}
 .graticule {
   stroke: #aaa;
 }
@@ -102,6 +175,7 @@ mape1(); mape2(); mape3(); mape4(); mape5(); mape6(); mape7();
         <li><a data-toggle="tab" href="#redhat">Redhat</a></li>
       </ul>
 <div class="tab-content">
+
       <!-- Apache Cloudstack -->
       <div class="tab-pane row active" id="apache">
       	<div id="tabs">
@@ -175,7 +249,7 @@ mape1(); mape2(); mape3(); mape4(); mape5(); mape6(); mape7();
   </div>
   </div>
 
-  <!-- OpenStack 
+  <!-- OpenStack -->
   <div class="tab-pane row" id="openstack"> 
     <div id="tabs2">
  
@@ -210,7 +284,81 @@ mape1(); mape2(); mape3(); mape4(); mape5(); mape6(); mape7();
         <h3>Commits/Population per TimeZone - OpenStack; Github data </h3>
       </div>
   </div>
-  </div-->
+  </div>
+
+    <!-- Puppet Labs -->
+  <div class="tab-pane row" id="puppet"> 
+    <div id="tabs3">
+ 
+        <ul>
+        <li><a  href="#agit3">Author data github</a></li>
+        <li><a  href="#aml3">Author Data Mailing lists</a></li>
+        <li><a  href="#cgit3">Commit data github</a></li>
+        <li><a  href="#mml3">Messages data mailing list</a></li>
+        <li><a  href="#cpa3">Commits per Author data</a></li>
+        <li><a  href="#mpa3">Messages per Author data</a></li>
+        <li><a  href="#ctp3">Commits by Timezone Population data</a></li>
+      </ul>
+      <div id="agit3">
+        <h3> Shaded as per Authors per TimeZone - Puppet labs; Github data </h3>
+      </div>
+      <div id="aml3">
+        <h3> Shaded as per Authors per TimeZone - Puppet labs; Mailing list data </h3>
+      </div>
+      <div id="cgit3">
+         <h3> Shaded as per Commits per TimeZone - Puppet labs; Github data </h3>
+      </div>
+      <div id="mml3">
+          <h3> Shaded as per Commits per TimeZone - Puppet labs; Mailing list data </h3>
+      </div>
+      <div id="cpa3">
+        <h3> Contributions/Authors per TimeZone - Puppet labs; Github data </h3>
+      </div>
+      <div id="mpa3">
+        <h3> Messages/Authors per TimeZone - Puppet labs; Mailing list data </h3>
+      </div>
+      <div id="ctp3">
+        <h3>Commits/Population per TimeZone - Puppet labs; Github data </h3>
+      </div>
+  </div>
+  </div>
+
+      <!-- Redhat -->
+  <div class="tab-pane row" id="redhat"> 
+    <div id="tabs4">
+ 
+        <ul>
+        <li><a  href="#agit4">Author data github</a></li>
+        <li><a  href="#aml4">Author Data Mailing lists</a></li>
+        <li><a  href="#cgit4">Commit data github</a></li>
+        <li><a  href="#mml4">Messages data mailing list</a></li>
+        <li><a  href="#cpa4">Commits per Author data</a></li>
+        <li><a  href="#mpa4">Messages per Author data</a></li>
+        <li><a  href="#ctp4">Commits by Timezone Population data</a></li>
+      </ul>
+      <div id="agit4">
+        <h3> Shaded as per Authors per TimeZone - Redhat; Github data </h3>
+      </div>
+      <div id="aml4">
+        <h3> Shaded as per Authors per TimeZone - Redhat; Mailing list data </h3>
+      </div>
+      <div id="cgit4">
+         <h3> Shaded as per Commits per TimeZone - Redhat; Github data </h3>
+      </div>
+      <div id="mml4">
+          <h3> Shaded as per Commits per TimeZone - Redhat; Mailing list data </h3>
+      </div>
+      <div id="cpa4">
+        <h3> Contributions/Authors per TimeZone - Redhat; Github data </h3>
+      </div>
+      <div id="mpa4">
+        <h3> Messages/Authors per TimeZone - Redhat; Mailing list data </h3>
+      </div>
+      <div id="ctp4">
+        <h3>Commits/Population per TimeZone - Redhat; Github data </h3>
+      </div>
+  </div>
+  </div>
 </div>
 </div>
 </body>

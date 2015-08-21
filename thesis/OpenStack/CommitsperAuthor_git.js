@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<meta charset="utf-8">
-<title>Time Zone World Map</title>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
-<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-<script src="textures.min.js"></script>
-<link type="text/css" rel="stylesheet" href="colorbrewer.css"/>
-<style>
-
-#viz path {
-  fill: none;
-  stroke: #111;
-}
-
-.graticule {
-  stroke: #aaa;
-}
-
-</style>
-</head>
-<body>
-<h1> Contributions/Authors per TimeZone - OpenStack; Github data </h1>
-  <div id="viz"></div>
-<script>
+function mapo5() {
   var width = 1500;
   var height = 600;
 
@@ -49,7 +23,7 @@
   .domain(ext_color_domain)
   .range(['rgb(198,219,239)','rgb(158,202,225)','rgb(107,174,214)','rgb(49,130,189)','rgb(8,81,156)']);
 
-  var svg = d3.select("#viz").append("svg")
+  var svg = d3.select("#cpa2").append("svg")
                           .attr("width",width)
                           .attr("height",height)
                           .call(d3.behavior.zoom().on("zoom",redraw))
@@ -69,11 +43,11 @@
   svg.style("stroke-width", 1 / s).attr("transform", "translate(" + t + ")scale(" + s + ")");
 }
 
-  d3.json('data/scm-timezone.json', function(data){
+  d3.json('thesis/OpenStack/data/scm-timezone.json', function(data){
    var com = data.authors;
    d.push(com);
 
-  d3.json("data/timezones-topo2.json", function(json){
+  d3.json("thesis/OpenStack/data/timezones-topo2.json", function(json){
 
  var tzdata = topojson.feature(json, json.objects.timezones).features;
 
@@ -114,7 +88,6 @@
         .attr("d",path)
         .attr("title", function(d,i) {return d.properties.Name;})
         .style("fill", function(d) {
-          console.log(d);
           var val = d.properties.div;
           if(val || val == 0){ return color(val); }
           else { return t.url(); }
@@ -146,7 +119,4 @@
             });         
 
          });
-
-    </script>
-  </body>
-</html>
+}

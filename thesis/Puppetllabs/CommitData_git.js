@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<meta charset="utf-8">
-<title>Time Zone World Map</title>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
-<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-<script src="textures.min.js"></script>
-<link type="text/css" rel="stylesheet" href="colorbrewer.css"/>
-<style>
-
-#viz path {
-  fill: none;
-  stroke: #111;
-}
-
-.graticule {
-  stroke: #aaa;
-}
-
-</style>
-</head>
-<body>
-  <h1> Shaded as per Commits per TimeZone - Puppet Labs; Github data </h1>
-  <div id="viz"></div>
-<script>
+function mapp3() {
   var width = 1500;
   var height = 600;
 
@@ -50,7 +24,7 @@
   .domain(ext_color_domain)
   .range(['rgb(237,248,251)','rgb(204,236,230)','rgb(153,216,201)','rgb(102,194,164)','rgb(44,162,95)','rgb(0,109,44)']);
 
-  var svg = d3.select("#viz").append("svg")
+  var svg = d3.select("#cgit3").append("svg")
                           .attr("width",width)
                           .attr("height",height)
                           .call(d3.behavior.zoom().on("zoom",redraw))
@@ -70,14 +44,14 @@
   svg.style("stroke-width", 1 / s).attr("transform", "translate(" + t + ")scale(" + s + ")");
 }
 
-  d3.json('data/scm-timezone.json', function(data){
+  d3.json('thesis/Puppetllabs/data/scm-timezone.json', function(data){
    var com = data.commits;
    d.push(com);
 
-  d3.json("data/timezones-topo2.json", function(json){
+  d3.json("thesis/Puppetllabs/ xxdata/timezones-topo2.json", function(json){
 
  var tzdata = topojson.feature(json, json.objects.timezones).features;
-   console.log(tzdata);
+
 
     for(var i = 0;i < data.tz.length;i++){
 
@@ -138,7 +112,4 @@ var legend = svg.selectAll("g.legend")
             });         
 
          });
-
-    </script>
-  </body>
-</html>
+}
