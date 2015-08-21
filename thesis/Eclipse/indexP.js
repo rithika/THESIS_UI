@@ -1,66 +1,4 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-
-body {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.bar {
-  fill: steelblue;
-}
-
-.x.axis path {
-  display: none;
-}
-
-.legend line {
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
-}
-
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
-}
-
-/* Style northward tooltips differently */
-.d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
-}
-
-</style>
-<body>
-   <center><h2>Stacked chart for Age of author in a community(percent) - Eclipse</h2></center>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-<script>
+function percent1() {
 
 var margin = {top: 20, right: 100, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
@@ -88,13 +26,12 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    console.log(d.y1);
     return "<strong>Category:</strong> <span style='color:red'>" + d.name + "</span><br>"+
   "<strong>Birth:</strong> <span style='color:steelblue'>" + ((d.y1)*100).toFixed(2) + "%</span><br>"+
   "<strong>Aging:</strong> <span style='color:gray'>" + ((100-(d.y1*100))).toFixed(2) + "%</span>";
   });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#percent1").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -102,7 +39,7 @@ var svg = d3.select("body").append("svg")
 
 svg.call(tip);
 
-d3.csv("data/newdata.csv", function(error, data) {
+d3.csv("thesis/Eclipse/data/newdata.csv", function(error, data) {
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Year"; }));
 
   data.forEach(function(d) {
@@ -155,5 +92,4 @@ d3.csv("data/newdata.csv", function(error, data) {
       .text(function(d) { return d.name; });
 
 });
-
-</script>
+}

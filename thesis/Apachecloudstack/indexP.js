@@ -26,7 +26,6 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    console.log(d.y1);
     return "<strong>Category:</strong> <span style='color:red'>" + d.name + "</span><br>"+
   "<strong>Birth:</strong> <span style='color:steelblue'>" + ((d.y1)*100).toFixed(2) + "%</span><br>"+
   "<strong>Aging:</strong> <span style='color:gray'>" + ((100-(d.y1*100))).toFixed(2) + "%</span>";
