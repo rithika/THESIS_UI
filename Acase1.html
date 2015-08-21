@@ -74,6 +74,67 @@ percent3();
 percent4();
 });
 </script>
+
+<style>
+#stack {
+    height: 400px; 
+    min-width: 400px; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+</style>
+<script type="text/javascript" src="thesis/Apachecloudstack/indexP.js">
+    </script>
+<script type="text/javascript" src="thesis/Eclipse/indexP.js">
+    </script>
+<script type="text/javascript" src="thesis/OpenStack/indexP.js">
+    </script>
+<script type="text/javascript" src="thesis/Puppetllabs/indexP.js">
+    </script>
+<script type="text/javascript" src="thesis/Redhat/indexP.js">
+    </script>
+</head>
+<body>
+<div class = "container-fluid">
+<button class="btn btn-warning"><a href="/THESIS_UI/index.html">Home</a></button>   
+<center>
+	<h2>Experience of Developers</h2></center>
+    <p> Pick an organization </p>
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#apache">Apache cloudstack</a></li>
+        <li><a data-toggle="tab" href="#eclipse">Eclipse</a></li>
+        <li><a data-toggle="tab" href="#openstack">OpenStack</a></li>
+        <li><a data-toggle="tab" href="#puppet">Puppet Labs</a></li>
+        <li><a data-toggle="tab" href="#redhat">Redhat</a></li>
+      </ul>
+<div class="tab-content">
+      <!-- Apache Cloudstack -->
+      <div class="tab-pane row active" id="apache">
+      	<div class="row">
+      <div id="contain"> </div>
+    </div>
+    <div class="row">
+
+      <div id="stack" style="min-width: 200px; height: 200px; margin: 0 auto"> </div>
+    </div>
+      <br>
+      	<div class="row">
+      <div id="percent" style="padding-left: 15px; padding top: 10px"><h4>Stacked chart for Age of author in a community(percent)</h4></div></div>
+  </div>
+
+  <div class="tab-pane row" id="eclipse"> coming soon
+  </div>
+
+  <div class="tab-pane row" id="openstack"> coming soon
+  </div>
+
+  <div class="tab-pane row" id="puppet"> coming soon
+  </div>
+
+  <div class="tab-pane row" id="redhat"> coming soon
+  </div>
+</div>
+</div>
 <script>
 $(function () {
     $('#contain').highcharts({
@@ -225,65 +286,5 @@ $.get('thesis/Apachecloudstack/data/newdata1.csv', function(data) {
     var chart = new Highcharts.Chart(options);
 });
 </script>
-<style>
-#stack {
-    height: 400px; 
-    min-width: 400px; 
-    max-width: 800px;
-    margin: 0 auto;
-}
-</style>
-<script type="text/javascript" src="thesis/Apachecloudstack/indexP.js">
-    </script>
-<script type="text/javascript" src="thesis/Eclipse/indexP.js">
-    </script>
-<script type="text/javascript" src="thesis/OpenStack/indexP.js">
-    </script>
-<script type="text/javascript" src="thesis/Puppetllabs/indexP.js">
-    </script>
-<script type="text/javascript" src="thesis/Redhat/indexP.js">
-    </script>
-</head>
-<body>
-<div class = "container-fluid">
-<button class="btn btn-warning"><a href="/THESIS_UI/index.html">Home</a></button>   
-<center>
-	<h2>Experience of Developers</h2></center>
-    <p> Pick an organization </p>
-      <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#apache">Apache cloudstack</a></li>
-        <li><a data-toggle="tab" href="#eclipse">Eclipse</a></li>
-        <li><a data-toggle="tab" href="#openstack">OpenStack</a></li>
-        <li><a data-toggle="tab" href="#puppet">Puppet Labs</a></li>
-        <li><a data-toggle="tab" href="#redhat">Redhat</a></li>
-      </ul>
-<div class="tab-content">
-      <!-- Apache Cloudstack -->
-      <div class="tab-pane row active" id="apache">
-      	<div class="row">
-      <div id="contain"> </div>
-    </div>
-    <div class="row">
-
-      <div id="stack" style="min-width: 200px; height: 200px; margin: 0 auto"> </div>
-    </div>
-      <br>
-      	<div class="row">
-      <div id="percent" style="padding-left: 15px; padding top: 10px"><h4>Stacked chart for Age of author in a community(percent)</h4></div></div>
-  </div>
-
-  <div class="tab-pane row" id="eclipse"> coming soon
-  </div>
-
-  <div class="tab-pane row" id="openstack"> coming soon
-  </div>
-
-  <div class="tab-pane row" id="puppet"> coming soon
-  </div>
-
-  <div class="tab-pane row" id="redhat"> coming soon
-  </div>
-</div>
-</div>
 </body>
 </html>
