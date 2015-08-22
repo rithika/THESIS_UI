@@ -1,14 +1,6 @@
 <html>
 <head>
 <title> Viz </title>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
-<script src="http://code.highcharts.com/highcharts.js"></script>
 <style>
 
 body {
@@ -64,25 +56,31 @@ body {
   left: 0;
 }
 
-</style>
-<script>
-$(document).ready(function(){   
-percent();
-percent1();
-percent2();
-percent3();
-percent4();
-});
-</script>
-
-<style>
-#stack {
+#stack, #contain {
     height: 400px; 
     min-width: 400px; 
     max-width: 800px;
     margin: 0 auto;
 }
 </style>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+<script>
+$(document).ready(function(){   
+percent();
+/*percent1();
+percent2();
+percent3();
+percent4();*/
+});
+</script>
 <script type="text/javascript" src="thesis/Apachecloudstack/indexP.js">
     </script>
 <script type="text/javascript" src="thesis/Eclipse/indexP.js">
@@ -119,7 +117,7 @@ percent4();
     </div>
       <br>
       	<div class="row">
-      <div id="percent" style="padding-left: 15px; padding top: 10px"><h4>Stacked chart for Age of author in a community(percent)</h4></div></div>
+     <center> <div id="percent" style="padding-left: 15px; padding top: 10px"><h4>Stacked chart for Age of author in a community(percent)</h4></div></center></div>
   </div>
 
   <div class="tab-pane row" id="eclipse"> coming soon
@@ -184,8 +182,7 @@ $(function () {
         }]
     });
 });
-</script>
-<script>
+
         var options = {
         chart: {
             renderTo: 'stack',

@@ -62,7 +62,7 @@ function map7() {
       var commitsByauthors = parseFloat(data.commits[i]/data.authors[i]);
 
       var dataset = parseFloat(data.commits[i]/data.population[i]);
-      console.log(dataset);
+      console.log("check these values now",dataset);
 
 
       for(var j = 0;j<tzdata.length;j++){

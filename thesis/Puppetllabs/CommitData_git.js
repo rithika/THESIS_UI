@@ -48,7 +48,7 @@ function mapp3() {
    var com = data.commits;
    d.push(com);
 
-  d3.json("thesis/Puppetllabs/ xxdata/timezones-topo2.json", function(json){
+  d3.json("thesis/Puppetllabs/data/timezones-topo2.json", function(json){
 
  var tzdata = topojson.feature(json, json.objects.timezones).features;
 

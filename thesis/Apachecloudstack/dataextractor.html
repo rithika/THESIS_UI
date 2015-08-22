@@ -31,7 +31,7 @@ d3.json("data/scm-demographics-birth.json", function(data){
 
 	}
 // arr1 accessible here; it has all the start years for the contributors from start
-//console.log(arr1);
+console.log("arr1",arr1);
 var copy = arr1.slice(0);
 for (var i = 0; i < arr1.length; i++) {
  
@@ -54,7 +54,7 @@ for (var i = 0; i < arr1.length; i++) {
 		}
 	}
  
-//	console.log(comp);
+	console.log("A",comp);
 
 });
 d3.json("data/scm-demographics-aging.json", function(data){
@@ -73,7 +73,7 @@ d3.json("data/scm-demographics-aging.json", function(data){
 			arr2.push(year1);
 	}
 // arr2 accessible here; it has all the start years for the contributors still left
-//console.log(arr2);
+console.log("arr2",arr2);
 var copy1 = arr2.slice(0);
 for (var i = 0; i < arr2.length; i++) {
  
@@ -96,7 +96,7 @@ for (var i = 0; i < arr2.length; i++) {
 		}
 	}
  
-	console.log(comp1);
+	console.log("B",comp1);
 
 });
 </script>

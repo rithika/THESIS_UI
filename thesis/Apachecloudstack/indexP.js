@@ -27,8 +27,8 @@ var tip = d3.tip()
   .offset([-10, 0])
   .html(function(d) {
     return "<strong>Category:</strong> <span style='color:red'>" + d.name + "</span><br>"+
-  "<strong>Birth:</strong> <span style='color:steelblue'>" + ((d.y1)*100).toFixed(2) + "%</span><br>"+
-  "<strong>Aging:</strong> <span style='color:gray'>" + ((100-(d.y1*100))).toFixed(2) + "%</span>";
+  "<strong>Left proj:</strong> <span style='color:steelblue'>" + ((d.y1)*100).toFixed(2) + "%</span><br>"+
+  "<strong>Still In:</strong> <span style='color:gray'>" + ((100-(d.y1*100))).toFixed(2) + "%</span>";
   });
 
 var svg = d3.select("#percent").append("svg")
@@ -44,8 +44,8 @@ d3.csv("thesis/Apachecloudstack/data/newdata.csv", function(error, data) {
 
   data.forEach(function(d) {
     var y0 = 0;
-    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
-    d.ages.forEach(function(d) { d.y0 /= y0; d.y1 /= y0; });
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]};});
+    d.ages.forEach(function(d) { d.y0 /= y0; d.y1 /= y0; });    
   });
 
   x.domain(data.map(function(d) { return d.Year; }));
