@@ -27,8 +27,8 @@ var tip = d3.tip()
   .offset([-10, 0])
   .html(function(d) {
     return "<strong>Category:</strong> <span style='color:red'>" + d.name + "</span><br>"+
-  "<strong>Left proj:</strong> <span style='color:steelblue'>" + ((d.y1)*100).toFixed(2) + "%</span><br>"+
-  "<strong>Still In:</strong> <span style='color:gray'>" + ((100-(d.y1*100))).toFixed(2) + "%</span>";
+  "<strong>Left project:</strong> <span style='color:steelblue'>" + ((d.y1)*100).toFixed(2) + "%</span><br>"+
+  "<strong>Still a part:</strong> <span style='color:gray'>" + ((100-(d.y1*100))).toFixed(2) + "%</span>";
   });
 
 var svg = d3.select("#percent").append("svg")
@@ -72,6 +72,7 @@ d3.csv("thesis/Apachecloudstack/data/newdata.csv", function(error, data) {
       .attr("y", function(d) { return y(d.y1); })
       .attr("height", function(d) { return y(d.y0) - y(d.y1); })
       .style("fill", function(d) { return color(d.name); })
+      .text(function(d) { Math.floor(d.y1.toFixed(2)*100) + "% population of " + d.name ; })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 

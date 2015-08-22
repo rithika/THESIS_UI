@@ -75,10 +75,10 @@ body {
 <script>
 $(document).ready(function(){   
 percent();
-/*percent1();
+percent1();
 percent2();
 percent3();
-percent4();*/
+percent4();
 });
 </script>
 <script type="text/javascript" src="thesis/Apachecloudstack/indexP.js">
@@ -112,7 +112,6 @@ percent4();*/
       <div id="contain"> </div>
     </div>
     <div class="row">
-
       <div id="stack" style="min-width: 200px; height: 200px; margin: 0 auto"> </div>
     </div>
       <br>
@@ -120,16 +119,55 @@ percent4();*/
      <center> <div id="percent" style="padding-left: 15px; padding top: 10px"><h4>Stacked chart for Age of author in a community(percent)</h4></div></center></div>
   </div>
 
-  <div class="tab-pane row" id="eclipse"> coming soon
+  <div class="tab-pane row" id="eclipse"> 
+    <div class="row">
+      <div id="contain1"> </div>
+    </div>
+    <div class="row">
+      <div id="stack1" style="min-width: 200px; height: 200px; margin: 0 auto"> </div>
+    </div>
+      <br>
+        <div class="row">
+     <center> <div id="percent1" style="padding-left: 15px; padding top: 10px"><h4>Stacked chart for Age of author in a community(percent)</h4></div></center></div>
   </div>
 
-  <div class="tab-pane row" id="openstack"> coming soon
+  <div class="tab-pane row" id="openstack"> 
+    <div class="row">
+      <div id="contain2"> </div>
+    </div>
+    <div class="row">
+
+      <div id="stack2" style="min-width: 200px; height: 200px; margin: 0 auto"> </div>
+    </div>
+      <br>
+        <div class="row">
+     <center> <div id="percent2" style="padding-left: 15px; padding top: 10px"><h4>Stacked chart for Age of author in a community(percent)</h4></div></center></div>
   </div>
 
-  <div class="tab-pane row" id="puppet"> coming soon
+  <div class="tab-pane row" id="puppet"> 
+    <div class="row">
+      <div id="contain3"> </div>
+    </div>
+    <div class="row">
+
+      <div id="stack3" style="min-width: 200px; height: 200px; margin: 0 auto"> </div>
+    </div>
+      <br>
+        <div class="row">
+     <center> <div id="percent3" style="padding-left: 15px; padding top: 10px"><h4>Stacked chart for Age of author in a community(percent)</h4></div></center></div>
   </div>
 
-  <div class="tab-pane row" id="redhat"> coming soon
+  <div class="tab-pane row" id="redhat"> 
+    <div class="row">
+      <div id="contain4"> </div>
+    </div>
+    <div class="row">
+
+      <div id="stack4" style="min-width: 200px; height: 200px; margin: 0 auto"> </div>
+    </div>
+      <br>
+        <div class="row">
+     <center> <div id="percent4" style="padding-left: 15px; padding top: 10px"><h4>Stacked chart for Age of author in a community(percent)</h4></div></center></div>
   </div>
 </div>
 </div>
@@ -281,6 +319,206 @@ $.get('thesis/Apachecloudstack/data/newdata1.csv', function(data) {
     
     // Create the chart
     var chart = new Highcharts.Chart(options);
+});
+
+//Eclipse
+$(function () {
+    $('#contain1').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Developers Age - Eclipse'
+        },
+        xAxis: {
+            categories: [
+                2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '# Developers'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        credits: {
+            enabled: false
+            },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Birth',
+            data: [178,140,148,156,147,201,328,440,382,482,240]
+        },
+                {
+            name: 'Aging',
+            data: [10,10,14,14,23,44,64,100,102,182,240]
+
+        }]
+    });
+});
+
+//Openstack
+$(function () {
+    $('#contain2').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Developer Age - Openstack'
+        },
+        xAxis: {
+            categories: [
+                2010,2011,2012,2013,2014,2015
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '# Developers'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        credits: {
+            enabled: false
+            },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Birth',
+            data: [69,208,450,956,1140,314]
+        },
+                {
+            name: 'Aging',
+            data: [22,47,163,343,629,314]
+
+        }]
+    });
+});
+
+//Puppet labs
+$(function () {
+    $('#contain3').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Developers Age - Puppet Labs'
+        },
+        xAxis: {
+            categories: [
+                2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '# Developers'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        credits: {
+            enabled: false
+            },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Birth',
+            data: [5,7,19,31,40,118,147,303,513,561,249]
+        },
+                {
+            name: 'Aging',
+            data: [0,0,4,2,4,15,17,46,82,113,249]
+
+        }]
+    });
+});
+
+//Redhat
+$(function () {
+    $('#contain4').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Developers Age - RedHat'
+        },
+        xAxis: {
+            categories: [
+                2010,2011,2012,2013,2014,2015
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '# Developers'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        credits: {
+            enabled: false
+            },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Birth',
+            data: [102,321,501,1008,956,5]
+        },
+                {
+            name: 'Aging',
+            data: [6,24,105,260,535,5]
+
+        }]
+    });
 });
 </script>
 </body>
