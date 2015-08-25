@@ -26,9 +26,16 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
+    if(d.name == "Left project") {
     return "<strong>Category:</strong> <span style='color:red'>" + d.name + "</span><br>"+
   "<strong>Left project:</strong> <span style='color:steelblue'>" + ((d.y1)*100).toFixed(2) + "%</span><br>"+
   "<strong>Still a part:</strong> <span style='color:gray'>" + ((100-(d.y1*100))).toFixed(2) + "%</span>";
+}
+else {
+   return "<strong>Category:</strong> <span style='color:red'>" + d.name + "</span><br>"+
+  "<strong>Left project:</strong> <span style='color:steelblue'>" + ((d.y0)*100).toFixed(2) + "%</span><br>"+
+  "<strong>Still a part:</strong> <span style='color:gray'>" + ((100-(d.y0*100))).toFixed(2) + "%</span>";
+}
   });
 
 var svg = d3.select("#percent1").append("svg")
