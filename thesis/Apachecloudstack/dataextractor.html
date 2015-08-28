@@ -22,7 +22,7 @@ d3.json("data/scm-demographics-birth.json", function(data){
 	for(var j = 0;j < age.length;j++){
 		var date = new Date(data.date);
 			one = age[j];
-			//console.log(one);
+			console.log(age.length);
 			//none = one.substr(0, one.indexOf(' '));	
 		var nd = new Date(date.setDate(date.getDate() - one));
 		//console.log(nd);
@@ -31,7 +31,7 @@ d3.json("data/scm-demographics-birth.json", function(data){
 
 	}
 // arr1 accessible here; it has all the start years for the contributors from start
-console.log("arr1",arr1);
+//console.log("arr1",arr1);
 var copy = arr1.slice(0);
 for (var i = 0; i < arr1.length; i++) {
  
@@ -54,7 +54,7 @@ for (var i = 0; i < arr1.length; i++) {
 		}
 	}
  
-	console.log("A",comp);
+	//console.log("A",comp);
 
 });
 d3.json("data/scm-demographics-aging.json", function(data){
@@ -67,13 +67,14 @@ d3.json("data/scm-demographics-aging.json", function(data){
 	for(var i = 0;i < age1.length;i++){
 		var date1 = new Date(data.date);
 			one1 = age1[i];
+			console.log(age1.length);
 			//none1 = one1.substr(0, one1.indexOf(' '));	
 		var nd1 = new Date(date1.setDate(date1.getDate() - one1));
 		var year1 = nd1.getFullYear();
 			arr2.push(year1);
 	}
 // arr2 accessible here; it has all the start years for the contributors still left
-console.log("arr2",arr2);
+//console.log("arr2",arr2);
 var copy1 = arr2.slice(0);
 for (var i = 0; i < arr2.length; i++) {
  
@@ -96,7 +97,7 @@ for (var i = 0; i < arr2.length; i++) {
 		}
 	}
  
-	console.log("B",comp1);
+	//console.log("B",comp1);
 
 });
 </script>

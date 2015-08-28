@@ -62,8 +62,6 @@ function map7() {
       var commitsByauthors = parseFloat(data.commits[i]/data.authors[i]);
 
       var dataset = parseFloat(data.commits[i]/data.population[i]);
-      console.log("check these values now",dataset);
-
 
       for(var j = 0;j<tzdata.length;j++){
 
@@ -92,7 +90,7 @@ function map7() {
           else { return t.url(); }
                 })
          .append("svg:title")
-         .text(function(d, i) { return "Country: " + d.properties.Name +"\n" + "Commits: " + d.properties.value + "\n" + "Authors: " + d.properties.authors });
+         .text(function(d, i) { return "Country: " + d.properties.Name +"\n" + "Commits: " + d.properties.value + "\n" + "Commits/Population: " + d.properties.popdiv});
 
   var legend = svg.selectAll("g.legend")
   .data(ext_color_domain)

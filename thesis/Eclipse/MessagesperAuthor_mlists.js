@@ -93,7 +93,7 @@ function mape6() {
           else { return t.url(); }
                 })
          .append("svg:title")
-          .text(function(d, i) { return "Country: " + d.properties.Name +"\n" + "Messages: " + d.properties.value + "\n" + "Authors: " + d.properties.authors });
+          .text(function(d, i) { return "Country: " + d.properties.Name +"\n" + "Messages/Authors: " + d.properties.div});
 
   var legend = svg.selectAll("g.legend")
   .data(ext_color_domain)
