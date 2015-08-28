@@ -8,8 +8,8 @@ function mapr2() {
     .fill("firebrick")
     .background("darkorange");
 
-  var ext_color_domain = [50, 250, 500, 1000, 2500]
-  var legend_labels = ["< 50", "250+", "500+", "1000+", "> 2500"] 
+  var ext_color_domain = [5, 25, 50, 100, 250]
+  var legend_labels = ["< 5", "5 - 25", "25 - 50", "50 - 100", "> 100"] 
 
   var d = [];
 
@@ -85,7 +85,7 @@ function mapr2() {
           else { return t.url(); }
                 })
          .append("svg:title")
-          .text(function(d, i) { return "Country: " + d.properties.Name +"\n" + "Messages: " + d.properties.value });
+          .text(function(d, i) { return "Country: " + d.properties.Name +"\n" + "Messages: " + d.properties.value +"\n" + "Authors: " + d.properties.authors});
 
   var legend = svg.selectAll("g.legend")
   .data(ext_color_domain)

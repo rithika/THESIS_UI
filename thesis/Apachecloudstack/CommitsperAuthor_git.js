@@ -9,7 +9,7 @@ function map5() {
     .background("darkorange");
 
   var ext_color_domain = [10, 50, 100, 250]
-  var legend_labels = ["<=10", "50+", "100+", "> 250"] 
+  var legend_labels = ["<=10", "10 - 50", "50 - 150", "> 150"] 
 
   var d = [];
 

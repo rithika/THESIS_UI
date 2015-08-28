@@ -8,8 +8,8 @@ function mapp5() {
     .fill("firebrick")
     .background("darkorange");
 
-  var ext_color_domain = [10, 50, 100, 250]
-  var legend_labels = ["<=10", "50+", "100+", "> 250"] 
+  var ext_color_domain = [10,25,50,100]
+  var legend_labels = ["0-10", "10-25", "25-50", "50-100"] 
 
   var d = [];
 
