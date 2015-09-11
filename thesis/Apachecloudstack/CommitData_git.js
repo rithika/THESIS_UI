@@ -94,7 +94,7 @@ var legend = svg.selectAll("g.legend")
   .enter().append("g")
   .attr("class", "legend");
 
-  var ls_w = 100, ls_h = 20;
+  var ls_w = 120, ls_h = 20;
 
   legend.append("rect")
   .attr("x", 1000)
